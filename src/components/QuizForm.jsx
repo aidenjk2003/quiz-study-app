@@ -45,7 +45,7 @@ function QuizForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`, 
+          'Authorization': `Bearer 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`, 
         },
         body: JSON.stringify(payload),
       });
