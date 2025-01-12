@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-
+import dotenv from 'dotenv';
+dotenv.config();
 function QuizForm() {
+  const openaiApiKey = process.env.OPENAI_API_KEY;
   const [topic, setTopic] = useState('');
   const [numQuestions, setNumQuestions] = useState(5);
   const [difficulty, setDifficulty] = useState('Medium');
@@ -40,8 +42,7 @@ function QuizForm() {
         ],
         max_tokens: 1500,
       };
-      const openaiApiKey = process.env.OPENAI_API_KEY;
-
+      
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
