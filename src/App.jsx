@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'; // Adjust path as needed
 import Home from './components/Home';
 import QuizForm from './components/QuizForm';
-import StudyPlan from './components/StudyPlan';
+import StudyPlan from './components/Studyplan';
 
 const App = () => {
   return (
