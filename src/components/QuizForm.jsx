@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 function QuizForm() {
-  const openaiApiKey = process.env.OPENAI_API_KEY;
+
   const [topic, setTopic] = useState('');
   const [numQuestions, setNumQuestions] = useState(5);
   const [difficulty, setDifficulty] = useState('Medium');
@@ -49,7 +45,7 @@ function QuizForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiApiKey}`,
+          'Authorization': 'Authorization': `Bearer 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`,
         },
         body: JSON.stringify(payload),
       });
