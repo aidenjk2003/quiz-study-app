@@ -45,7 +45,7 @@ function QuizForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer OPEN_AI_KEY`, // Replace with your OPENAPI key
+          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`, // Replace with your OPENAPI key
         },
         body: JSON.stringify(payload),
       });
