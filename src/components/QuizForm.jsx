@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-function QuizForm() {
 
+function QuizForm() {
   const [topic, setTopic] = useState('');
   const [numQuestions, setNumQuestions] = useState(5);
   const [difficulty, setDifficulty] = useState('Medium');
@@ -40,12 +40,12 @@ function QuizForm() {
         ],
         max_tokens: 1500,
       };
-      
+
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Authorization': `Bearer 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`,
+          'Authorization': `Bearer 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`, // Replace with your API key
         },
         body: JSON.stringify(payload),
       });
@@ -61,7 +61,7 @@ function QuizForm() {
       let rawContent = data.choices[0].message.content.trim();
 
       if (rawContent.startsWith('```')) {
-        rawContent = rawContent.replace(/```(?:json)?/g, '').trim();
+        rawContent = rawContent.replace(/```(?:json)?/g, '').trim(); // Clean Markdown delimiters
       }
 
       const parsedContent = JSON.parse(rawContent);
