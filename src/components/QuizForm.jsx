@@ -45,7 +45,7 @@ function QuizForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`, // Replace with your API key
+          'Authorization': `Bearer OPEN_AI_KEY`, // Replace with your OPENAPI key
         },
         body: JSON.stringify(payload),
       });
@@ -61,7 +61,7 @@ function QuizForm() {
       let rawContent = data.choices[0].message.content.trim();
 
       if (rawContent.startsWith('```')) {
-        rawContent = rawContent.replace(/```(?:json)?/g, '').trim(); // Clean Markdown delimiters
+        rawContent = rawContent.replace(/```(?:json)?/g, '').trim();
       }
 
       const parsedContent = JSON.parse(rawContent);
